@@ -1,0 +1,18 @@
+# Python
+venv/
+__pycache__/
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+
+# Data files
+data/
+
+# Power BI
+*.pbix
+
+# Kaggle credentials
+kaggle.json
+
+
