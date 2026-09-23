@@ -1,13 +1,16 @@
-# scripts/load_to_postgres.py
 import pandas as pd
 from sqlalchemy import create_engine
-import urllib.parse # Şifreyi güvenli formata çevirmek için ekledik
+import urllib.parse
 import os
+from dotenv import load_dotenv # Yeni eklenen satır
+
+# .env dosyasını yükle
+load_dotenv() # Yeni eklenen satır
 
 def load_data_to_db():
-    # PostgreSQL bağlantı bilgileri
     DB_USER = 'postgres'
-    DB_PASS = '73737373' # Buraya kendi şifrenizi (Türkçe karakterli olsa da) yazın
+    # Şifreyi koddan sildik, artık .env dosyasından güvenle çekiyor!
+    DB_PASS = os.getenv('DB_PASS') 
     DB_HOST = 'localhost'
     DB_PORT = '5432'
     DB_NAME = 'olist_db'
