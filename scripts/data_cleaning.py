@@ -26,7 +26,7 @@ def clean_data():
     df_orders['is_delayed'] = (df_orders['order_delivered_customer_date'] > df_orders['order_estimated_delivery_date']) & (df_orders['order_delivered_customer_date'].notnull())
     
     df_orders.to_csv(os.path.join(processed_path, 'cleaned_orders.csv'), index=False)
-    print("✓ Orders tablosu temizlendi (Süre ve Gecikme metrikleri eklendi).")
+    print(" Orders tablosu temizlendi (Süre ve Gecikme metrikleri eklendi).")
 
    # 2. PRODUCTS: Eksik Veri Doldurma ve İNGİLİZCE KATEGORİ EKLEME (Merge)
     df_products = pd.read_csv(os.path.join(raw_path, 'olist_products_dataset.csv'))
@@ -47,13 +47,13 @@ def clean_data():
         df_products[col] = df_products[col].fillna(0)
         
     df_products.to_csv(os.path.join(processed_path, 'cleaned_products.csv'), index=False)
-    print("✓ Products tablosu temizlendi (İngilizce kategori isimleri eklendi).")
+    print(" Products tablosu temizlendi (İngilizce kategori isimleri eklendi).")
 
     # 3. CUSTOMERS: Metin Standardizasyonu (Çok önemli!)
     df_customers = pd.read_csv(os.path.join(raw_path, 'olist_customers_dataset.csv'))
     df_customers['customer_city'] = df_customers['customer_city'].str.lower().str.strip()
     df_customers.to_csv(os.path.join(processed_path, 'cleaned_customers.csv'), index=False)
-    print("✓ Customers tablosu temizlendi (Şehir isimleri standardize edildi).")
+    print(" Customers tablosu temizlendi (Şehir isimleri standardize edildi).")
 
     # 4. PAYMENTS
     df_payments = pd.read_csv(os.path.join(raw_path, 'olist_order_payments_dataset.csv'))
@@ -65,9 +65,9 @@ def clean_data():
     # Tarih kolonunu düzeltelim
     df_items['shipping_limit_date'] = pd.to_datetime(df_items['shipping_limit_date'], errors='coerce')
     df_items.to_csv(os.path.join(processed_path, 'cleaned_order_items.csv'), index=False)
-    print("✓ Order Items tablosu aktarıldı.")
+    print("  Order Items tablosu aktarıldı.")
     
-    print("Tüm işlemler bitti. Yeni veriler 'data/processed/' klasöründe!")
+    print("Tüm işlemler bitti. Yeni veriler 'data/processed/' klasörüne taşındı")
 
 if __name__ == "__main__":
     clean_data()
