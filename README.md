@@ -50,7 +50,7 @@ Kaggle API Token dosyanızı (kaggle.json) doğru dizine yerleştirin.
 
 Sırasıyla ETL scriptlerini çalıştırın:
 
-Bash
+```bash
 python scripts/extract_load.py
 python scripts/data_cleaning.py
 python scripts/load_to_postgres.py
@@ -62,7 +62,7 @@ dashboard/olist_dashboard.pbix dosyasını Power BI Desktop ile açın.
 ## 📊 Dashboard Görünümleri
 
 **1. Genel Satış ve Ciro Analizi**
-![Satış Performansı](images/Yönetici%20özet.png)
+![Satış Performansı](images/yonetici_ozeti.png)
 
 **2. Operasyon ve Lojistik Performansı**
 ![Lojistik Performansı](images/lojistik.png)
