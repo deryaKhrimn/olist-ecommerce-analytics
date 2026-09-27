@@ -59,6 +59,14 @@ sql/ klasöründeki scriptleri PostgreSQL üzerinde çalıştırarak veri ambar�
 dashboard/olist_dashboard.pbix dosyasını Power BI Desktop ile açın.
 
 📈 Temel İçgörüler (Key Insights)
+## 📊 Dashboard Görünümleri
+
+**1. Genel Satış ve Ciro Analizi**
+![Satış Performansı](images/Yönetici%20özet.png)
+
+**2. Operasyon ve Lojistik Performansı**
+![Lojistik Performansı](images/lojistik.png)
+
 Lojistik Performansı: Gerçekleşen teslimat süreleri ile tahmin edilen süreler arasındaki sapmalar vw_delivery_analysis üzerinden tespit edilmiştir.
 
 Ödeme Davranışları: Müşterilerin tercih ettiği ödeme yöntemlerine göre sepet ortalamasındaki (AOV) değişimler analiz edilmiştir.
