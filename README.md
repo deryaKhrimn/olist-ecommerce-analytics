@@ -71,8 +71,9 @@ python scripts/load_to_postgres.py
 * **Ödeme Davranışları:** Müşterilerin tercih ettiği ödeme yöntemlerine göre sepet ortalamasındaki (AOV) değişimler analiz edilmiştir.
 
 ## 📊 Dashboard Görünümleri
-
 **1. Genel Satış ve Ciro Analizi**
+![Satış Performansı](images/yonetici_ozeti.png)
 
 **2. Operasyon ve Lojistik Performansı**
+![Lojistik Performansı](images/lojistik.png)
 
