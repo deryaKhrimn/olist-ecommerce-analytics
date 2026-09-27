@@ -1,3 +1,4 @@
+```markdown
 # 📊 Olist E-Commerce Data Analytics Pipeline 
 
 Bu proje, Brezilya merkezli e-ticaret platformu Olist'in verilerini kullanarak uçtan uca bir veri analitiği ve iş zekası (BI) mimarisi sunmaktadır. Kaggle API kullanılarak otomatik çekilen veriler, Python ile işlenmiş, PostgreSQL üzerinde Yıldız Şema (Star Schema) modeline dönüştürülmüş ve Power BI ile görselleştirilmiştir.
@@ -28,3 +29,50 @@ olist-ecommerce-analytics/
 │   └── olist_dashboard.pbix  # Power BI Dashboard dosyası
 ├── .env                   # DB şifreleri (Git'te yok)
 └── requirements.txt       # Proje bağımlılıkları
+
+```
+
+## 🛠️ Kullanılan Teknolojiler
+
+* **Python:** Pandas, NumPy, SQLAlchemy, python-dotenv
+* **Veritabanı:** PostgreSQL, pgAdmin (Star Schema, CTEs, Views)
+* **İş Zekası:** Power BI (DAX, Data Modeling)
+* **Versiyon Kontrol:** Git & GitHub
+
+## 🚀 Kurulum ve Çalıştırma
+
+Repoyu klonlayın ve bağımlılıkları yükleyin:
+
+```bash
+git clone [https://github.com/deryaKhrimn/olist-ecommerce-analytics.git](https://github.com/deryaKhrimn/olist-ecommerce-analytics.git)
+cd olist-ecommerce-analytics
+pip install -r requirements.txt
+
+```
+
+Ana dizinde bir `.env` dosyası oluşturun ve PostgreSQL şifrenizi ekleyin: `DB_PASS=sifreniz`
+
+Kaggle API Token dosyanızı (`kaggle.json`) doğru dizine yerleştirin. Sırasıyla ETL scriptlerini çalıştırın:
+
+```bash
+python scripts/extract_load.py
+python scripts/data_cleaning.py
+python scripts/load_to_postgres.py 
+
+```
+
+`sql/` klasöründeki scriptleri PostgreSQL üzerinde çalıştırarak veri ambarını kurun.
+
+`dashboard/olist_dashboard.pbix` dosyasını Power BI Desktop ile açın.
+
+## 📈 Temel İçgörüler (Key Insights)
+
+* **Lojistik Performansı:** Gerçekleşen teslimat süreleri ile tahmin edilen süreler arasındaki sapmalar `vw_delivery_analysis` üzerinden tespit edilmiştir.
+* **Ödeme Davranışları:** Müşterilerin tercih ettiği ödeme yöntemlerine göre sepet ortalamasındaki (AOV) değişimler analiz edilmiştir.
+
+## 📊 Dashboard Görünümleri
+
+**1. Genel Satış ve Ciro Analizi**
+
+**2. Operasyon ve Lojistik Performansı**
+
