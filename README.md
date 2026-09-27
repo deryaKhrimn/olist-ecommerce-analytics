@@ -28,7 +28,6 @@ olist-ecommerce-analytics/
 │   └── olist_dashboard.pbix  # Power BI Dashboard dosyası
 ├── .env                   # DB şifreleri (Git'te yok)
 └── requirements.txt       # Proje bağımlılıkları
-
 🛠️ Kullanılan Teknolojiler
 Python: Pandas, NumPy, SQLAlchemy, python-dotenv
 
@@ -40,36 +39,27 @@ Versiyon Kontrol: Git & GitHub
 
 🚀 Kurulum ve Çalıştırma
 Repoyu klonlayın ve bağımlılıkları yükleyin:
-Bash
 git clone https://github.com/deryaKhrimn/olist-ecommerce-analytics.git
 cd olist-ecommerce-analytics
 pip install -r requirements.txt
+
 Ana dizinde bir .env dosyası oluşturun ve PostgreSQL şifrenizi ekleyin: DB_PASS=sifreniz
 
-Kaggle API Token dosyanızı (kaggle.json) doğru dizine yerleştirin.
-
-Sırasıyla ETL scriptlerini çalıştırın:
-
-```bash
+Kaggle API Token dosyanızı (kaggle.json) doğru dizine yerleştirin. Sırasıyla ETL scriptlerini çalıştırın:
 python scripts/extract_load.py
 python scripts/data_cleaning.py
 python scripts/load_to_postgres.py
+
 sql/ klasöründeki scriptleri PostgreSQL üzerinde çalıştırarak veri ambarını kurun.
 
 dashboard/olist_dashboard.pbix dosyasını Power BI Desktop ile açın.
 
 📈 Temel İçgörüler (Key Insights)
-## 📊 Dashboard Görünümleri
-
-**1. Genel Satış ve Ciro Analizi**
-![Satış Performansı](images/yonetici_ozeti.png)
-
-**2. Operasyon ve Lojistik Performansı**
-![Lojistik Performansı](images/lojistik.png)
-
 Lojistik Performansı: Gerçekleşen teslimat süreleri ile tahmin edilen süreler arasındaki sapmalar vw_delivery_analysis üzerinden tespit edilmiştir.
 
 Ödeme Davranışları: Müşterilerin tercih ettiği ödeme yöntemlerine göre sepet ortalamasındaki (AOV) değişimler analiz edilmiştir.
 
+📊 Dashboard Görünümleri
+1. Genel Satış ve Ciro Analizi
 
-
+2. Operasyon ve Lojistik Performansı
